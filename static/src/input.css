@@ -1,0 +1,8 @@
+@import "tailwindcss";
+/* Tell Tailwind exactly where to look for your HTML files */
+@source "../../templates";
+/* 
+Why this matters: The @source directive tells the Tailwind compiler to scan your Flask templates directory[4]. 
+It will dynamically find exactly which CSS classes you use in your HTML and only compile those into your final file. This keeps your web app lightning-fast.
+
+*/
