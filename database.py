@@ -90,11 +90,11 @@ def create_request(
     return get_request_by_id(new_id)
 
 
-def get_all_requests():
+def get_all_requests(limit=100):
     """Return all requests, newest first."""
     conn = get_connection()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM requests ORDER BY created_at DESC")
+    cursor.execute("SELECT * FROM requests ORDER BY created_at DESC LIMIT ?", (limit,))
     rows = cursor.fetchall()
     conn.close()
     return [_row_to_dict(r) for r in rows]
