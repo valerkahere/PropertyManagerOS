@@ -27,21 +27,38 @@
 
   <div class="font-mono text-[9px] text-text-muted uppercase tracking-[1px] pt-4 pb-1.5 px-5">Operations</div>
   <nav class="px-2.5">
-    <div class="nav-item group flex items-center gap-2.5 py-2 px-3 rounded-lg cursor-pointer text-[13px] text-text-muted transition-all duration-150 mb-0.5 select-none hover:bg-surface-alt hover:text-text-main [&.active]:bg-accent/10 [&.active]:text-accent [&.active]:font-medium active" data-page="overview" onclick="navigate('overview', this)">
-      <span class="text-[15px] w-5 text-center">📊</span> Overview
-    </div>
-    <div class="nav-item group flex items-center gap-2.5 py-2 px-3 rounded-lg cursor-pointer text-[13px] text-text-muted transition-all duration-150 mb-0.5 select-none hover:bg-surface-alt hover:text-text-main [&.active]:bg-accent/10 [&.active]:text-accent [&.active]:font-medium" data-page="queue" onclick="navigate('queue', this)">
-      <span class="text-[15px] w-5 text-center">📋</span> Request Queue
-      <span class="ml-auto font-mono text-[10px] bg-status-blue/15 text-status-blue py-px px-1.5 rounded-lg" id="nav-new-count" style="display:none;"></span>
-    </div>
-    <div class="nav-item group flex items-center gap-2.5 py-2 px-3 rounded-lg cursor-pointer text-[13px] text-text-muted transition-all duration-150 mb-0.5 select-none hover:bg-surface-alt hover:text-text-main[&.active]:bg-accent/10 [&.active]:text-accent [&.active]:font-medium" data-page="autopilot" onclick="navigate('autopilot', this)">
-      <span class="text-[15px] w-5 text-center">🤖</span> AutoPilot
-      <span class="ml-auto font-mono text-[10px] bg-status-red/20 text-status-red py-px px-1.5 rounded-lg" id="nav-emergency-count" style="display:none;"></span>
-    </div>
-    <div class="nav-item group flex items-center gap-2.5 py-2 px-3 rounded-lg cursor-pointer text-[13px] text-text-muted transition-all duration-150 mb-0.5 select-none hover:bg-surface-alt hover:text-text-main [&.active]:bg-accent/10 [&.active]:text-accent[&.active]:font-medium" data-page="analytics" onclick="navigate('analytics', this)">
-      <span class="text-[15px] w-5 text-center">📈</span> Analytics
-    </div>
-  </nav>
+  <!-- Overview -->
+  <div
+    class="nav-item group flex items-center gap-2.5 py-2 px-3 rounded-lg cursor-pointer text-[13px] text-text-muted transition-all duration-150 mb-0.5 select-none hover:bg-surface-alt hover:text-text-main [&.active]:bg-accent/10 [&.active]:text-accent [&.active]:font-medium active"
+    data-page="overview" onclick="navigate('overview', this)">
+    <span class="text-[15px] w-5 text-center">📊</span> Overview
+  </div>
+
+  <!-- Queue (Fixed missing space after text-text-main) -->
+  <div
+    class="nav-item group flex items-center gap-2.5 py-2 px-3 rounded-lg cursor-pointer text-[13px] text-text-muted transition-all duration-150 mb-0.5 select-none hover:bg-surface-alt hover:text-text-main [&.active]:bg-accent/10 [&.active]:text-accent [&.active]:font-medium"
+    data-page="queue" onclick="navigate('queue', this)">
+    <span class="text-[15px] w-5 text-center">📋</span> Request Queue
+    <span class="ml-auto font-mono text-[10px] bg-status-blue/15 text-status-blue py-px px-1.5 rounded-lg"
+      id="nav-new-count" style="display:none;"></span>
+  </div>
+
+  <!-- AutoPilot (Fixed missing space) -->
+  <div
+    class="nav-item group flex items-center gap-2.5 py-2 px-3 rounded-lg cursor-pointer text-[13px] text-text-muted transition-all duration-150 mb-0.5 select-none hover:bg-surface-alt hover:text-text-main [&.active]:bg-accent/10 [&.active]:text-accent [&.active]:font-medium"
+    data-page="autopilot" onclick="navigate('autopilot', this)">
+    <span class="text-[15px] w-5 text-center">🤖</span> AutoPilot
+    <span class="ml-auto font-mono text-[10px] bg-status-red/20 text-status-red py-px px-1.5 rounded-lg"
+      id="nav-emergency-count" style="display:none;"></span>
+  </div>
+
+  <!-- Analytics (Fixed missing space) -->
+  <div
+    class="nav-item group flex items-center gap-2.5 py-2 px-3 rounded-lg cursor-pointer text-[13px] text-text-muted transition-all duration-150 mb-0.5 select-none hover:bg-surface-alt hover:text-text-main [&.active]:bg-accent/10 [&.active]:text-accent [&.active]:font-medium"
+    data-page="analytics" onclick="navigate('analytics', this)">
+    <span class="text-[15px] w-5 text-center">📈</span> Analytics
+  </div>
+</nav>
 
   <hr class="border-none border-t border-border-base my-2.5 mx-0" />
   
@@ -81,8 +98,11 @@
   </div>
 
   <!-- ── Page: Overview ── -->
-  <div class="page flex-1 overflow-y-auto overflow-x-hidden flex-col hidden[&.active]:flex p-5 sm:p-6 gap-4" id="page-overview">
-    
+  <!-- CORRECTED: Added space between 'hidden' and '[&.active]:flex' -->
+<div 
+  class="page flex-1 overflow-y-auto overflow-x-hidden flex-col hidden [&.active]:flex p-5 sm:p-6 gap-4"
+  id="page-overview"
+>
     <!-- Stats Grid -->
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-3">
       <div class="bg-surface border border-border-base rounded-xl py-4 px-4.5">
