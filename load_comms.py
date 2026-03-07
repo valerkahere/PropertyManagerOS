@@ -20,8 +20,8 @@ sys.path.insert(0, script_dir)
 import database
 import comms_engine
 
-JSON_FILE = os.path.join(script_dir, "proptech-test-data.json")
-FALLBACK_JSON = os.path.join(script_dir, "proptech-test-data_(1).json")
+JSON_FILE = os.path.join(script_dir, "data", "dataset.json")
+FALLBACK_JSON = os.path.join(script_dir, "dataset.json")
 
 
 def load_json():
@@ -260,13 +260,16 @@ def process_threads(emails):
 def print_summary():
     """Print final summary stats."""
     analytics = database.get_comms_analytics()
+    by_priority = analytics.get("by_priority", {})
     print("=" * 60)
     print("✅ COMMS INTELLIGENCE LOADED SUCCESSFULLY")
     print("=" * 60)
     print(f"  📧 Total emails:    {analytics['total']}")
     print(f"  📬 Unread:          {analytics['unread']}")
-    print(f"  🔴 Critical:        {analytics['critical']}")
-    print(f"  🟠 High:            {analytics['high']}")
+    print(f"  🔴 Critical:        {by_priority.get('critical', analytics.get('critical', 0))}")
+    print(f"  🟠 Important:       {by_priority.get('important', analytics.get('high', 0))}")
+    print(f"  🟡 Medium:          {by_priority.get('medium', analytics.get('by_urgency', {}).get('medium', 0))}")
+    print(f"  🟢 Low:             {by_priority.get('low', analytics.get('by_urgency', {}).get('low', 0))}")
     print(f"  🚨 Welfare checks:  {analytics['welfare_checks']}")
     print(f"  ✅ Open actions:    {analytics['open_actions']}")
     print(f"  ⚖️  Legal exposure:  {analytics['legal_exposure']}")
