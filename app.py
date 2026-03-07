@@ -55,7 +55,7 @@ def tenant_portal():
 @app.route("/manager")
 def manager_dashboard():
     """Property manager operations dashboard."""
-    return render_template("index.html")
+    return render_template("manager.html")
 
 
 @app.route("/manager-legacy")
