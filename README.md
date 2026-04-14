@@ -1,9 +1,13 @@
 # PropertyManagerOS — AI Property Operations Dashboard
 ### Give(a)Go Hackathon · March 7, 2025 · Baseline Dublin
 
+### Live demo below!
+
+[![Screen recording of a python web app designed to make property's manager life easier by bringing all of the requests into a single platform with AI-integrated automatic triage and auto-reply generation to requests from the manager side.](/assets/propertymanageros.png)](https://www.valerkahere.com/assets/videos/PropertyManagerOS_demo/PropertyManagerOS_Demo.mp4)
+
 > AI-powered maintenance triage system with AutoPilot Mode, Voice Input, live streaming, and contractor brief export.
 
----
+
 
 ## Quick Start (5 minutes)
 
@@ -40,7 +44,7 @@ python app.py
 ```
 Open **http://localhost:5000** in Chrome.
 
----
+
 
 ## Development Workflow
 
@@ -74,7 +78,7 @@ black .
 
 GitHub Actions runs lint + formatting + compile checks on every push and pull request.
 
----
+
 
 ## Features
 
