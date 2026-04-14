@@ -1,4 +1,4 @@
-# PropertyOS — AI Property Operations Dashboard
+# PropertyManagerOS — AI Property Operations Dashboard
 ### Give(a)Go Hackathon · March 7, 2025 · Baseline Dublin
 
 > AI-powered maintenance triage system with AutoPilot Mode, Voice Input, live streaming, and contractor brief export.
@@ -10,12 +10,12 @@
 ### 1. Get Your FREE Groq API Key
 1. Go to **[console.groq.com](https://console.groq.com)**
 2. Sign Up (use Google — fastest)
-3. Click **API Keys** → **Create API Key** → name it `propertyos`
+3. Click **API Keys** → **Create API Key** → name it `PropertyManagerOS`
 4. Copy the key (starts with `gsk_`)
 
 ### 2. Setup
 ```bash
-cd propertyos
+cd PropertyManagerOS
 python -m venv venv
 source venv/bin/activate          # Windows: venv\Scripts\activate
 pip install -r requirements.txt
